@@ -1,0 +1,35 @@
+:root{
+  --pwa-theme: #ff0000;
+}
+
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  padding-top: calc(10px + env(safe-area-inset-top));
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0,0,0,.12);
+  background: white;
+}
+
+.pwa-add-top-margin .container {
+  margin-top: calc(env(safe-area-inset-top) + 8px);
+}
+
+.pwa-install-btn {
+  position: fixed;
+  right: 12px;
+  bottom: calc(14px + env(safe-area-inset-bottom));
+  z-index: 99999;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  background: var(--pwa-theme);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
