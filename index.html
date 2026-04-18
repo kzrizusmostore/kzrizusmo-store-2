@@ -8,12 +8,9 @@
 <meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/><meta content="no-cache" http-equiv="Pragma"/><meta content="0" http-equiv="Expires"/><meta content="no-referrer" name="referrer"/><title>KZRIZUSMO Store</title><meta content="KZRIZUSMO Store" name="description"/><meta content="#050505" name="theme-color"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/><link href="./styles.css" rel="stylesheet"/>
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<link rel="stylesheet" href="assets/bundle.css"/>
-
-<script src="assets/bundle.js"></script>
-<script>window.__runBundlePart&&window.__runBundlePart(0);</script>
 
 
 
@@ -30,28 +27,6 @@
 
 
 
-<script>window.__runBundlePart&&window.__runBundlePart(1);</script>
-
-
-
-
-
-
-<script>window.__runBundlePart&&window.__runBundlePart(2);</script>
-
-
-
-
-
-
-
-
-<script>window.__runBundlePart&&window.__runBundlePart(3);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(4);</script>
-
-
-
-<script>window.__runBundlePart&&window.__runBundlePart(5);</script>
 
 
 
@@ -61,6 +36,33 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="./head.js"></script>
 </head><body class="kz-sidebar-home"><div class="statusbar-space"></div><div class="app-wrapper"><div id="welcomePopup" style="display:none !important;"></div><div id="payOverlay" onclick="onPayOverlayClick(event)"><div aria-label="Payment" aria-modal="true" class="pay-modal" onclick="event.stopPropagation()" role="dialog"><div class="pay-head"><div><h3>Payment</h3><div class="pay-sub">Produk: <b id="payProductName">-</b><span class="pay-server-badge" id="payServerBadge" style="display:none;">S1</span></div></div><div class="pay-row"><div class="pay-badge" id="payTimerBadge"><span class="pay-dot" id="payTimerDot"></span><span id="payTimerText">Timer: belum mulai</span></div><button aria-label="Close" class="pay-close" onclick="closePaymentFlow()">×</button></div></div><div aria-live="polite" class="pay-toast" id="payToast"></div><div class="pay-body"><div id="payMainView"><div style="font-weight:900">Metode Pembayaran</div><div class="pay-grid" id="payMethodGrid"><div class="pay-method" data-method="qris" onclick="selectPaymentMethod('qris')">QRIS</div><div class="pay-method" data-method="dana" onclick="selectPaymentMethod('dana')">DANA</div><div class="pay-method" data-method="gopay" onclick="selectPaymentMethod('gopay')">GOPAY</div><div class="pay-method" data-method="ovo" onclick="selectPaymentMethod('ovo')">OVO</div></div><div class="pay-panel" id="payDetailPanel" style="display:none;"><div class="pay-row" style="justify-content:space-between"><div style="font-weight:900">Detail Pembayaran</div><div class="pay-sub" id="payDeadlineText">Batas: -</div></div><div id="payQRISWrap" style="display:none; margin-top:10px;"><img alt="QRIS" class="pay-qr" id="payQrisImg"/><button class="pay-btn secondary" id="payBtnDownloadQRIS" onclick="downloadQris()" type="button">DOWNLOAD QRIS</button></div><div id="payNumberWrap" style="display:none; margin-top:10px;"><div class="pay-number"><code id="payNumberText">-</code><button class="pay-btn secondary" onclick="copyPaymentNumber()" style="width:auto; padding:10px 12px; margin-top:0;" type="button">SALIN</button></div></div><div class="pay-info" id="payMethodInfo" style="display:block; margin-top:10px;"></div><div class="pay-upload" id="payUploadSection"><div id="payUploadTitle" style="font-weight:900">Upload Bukti Pembayaran</div><form enctype="multipart/form-data" id="payProofForm" method="post"><input name="to_email" type="hidden" value="kzrizusmostore@gmail.com"/><input id="payFormOrderId" name="order_id" type="hidden" value=""/><input id="payFormProduct" name="product_name" type="hidden" value=""/><input id="payFormUnitPrice" name="unit_price" type="hidden" value=""/><input id="payFormTotal" name="total_price" type="hidden" value=""/><input id="payFormMethod" name="payment_method" type="hidden" value=""/><input id="payFormValue" name="payment_value" type="hidden" value=""/><input id="payFormDeadline" name="payment_deadline" type="hidden" value=""/><input id="payFormSubject" name="subject" type="hidden" value=""/><input id="payFormMessage" name="message" type="hidden" value=""/><input id="payFormFromName" name="from_name" type="hidden" value=""/><input id="payFormSenderName" name="sender_name" type="hidden" value=""/><input id="payFormWA" name="whatsapp" type="hidden" value=""/><textarea id="payFormDetail" name="order_detail" style="display:none"></textarea><div class="pay-summary"><div class="pay-srow"><span>Produk</span><b id="paySumProduct">-</b></div><div class="pay-srow"><span>Harga Satuan</span><b id="paySumUnit">-</b></div><div class="pay-srow"><span>Jumlah</span><div class="pay-qty-wrap"><button class="qty-btn" id="payQtyMinus" type="button">−</button><input class="pay-input pay-qty" id="payQtyInput" inputmode="numeric" min="1" name="qty" required="" type="number" value="1"/><button class="qty-btn" id="payQtyPlus" type="button">+</button></div></div><div class="pay-srow"><span>Subtotal</span><b id="paySumSubtotal">-</b></div><div class="pay-srow" id="payRowDiscount" style="display:none;"><span>Diskon Member</span><b id="paySumDiscount">-</b></div><div class="pay-srow" id="payRowPromo" style="display:none;"><span>Diskon Promo</span><b id="paySumPromo">-</b></div><div class="pay-srow" id="payRowUnique" style="display:none;"><span>Diskon Unik</span><b id="paySumUnique">-</b></div><div class="pay-srow"><span>Total Bayar</span><b id="paySumTotal">-</b></div><div class="pay-srow" id="payRowPromoCode" style="display:none;"><span>Kode Promo</span><b id="paySumPromoCode">-</b></div><div class="pay-srow" id="payRowSender" style="display:none;"><span>Username</span><b id="paySumSender">-</b></div><div class="pay-srow" id="payRowWA" style="display:none;"><span>Nomor WhatsApp</span><b id="paySumWA">-</b></div></div><div class="pay-field" id="payPromoField"><label class="pay-label" for="payPromoInput">Kode Promo (opsional)</label><div class="pay-inline"><input autocomplete="off" class="pay-input" id="payPromoInput" placeholder="contoh: KZR019" type="text"/><button class="pay-btn secondary" id="payPromoApplyBtn" onclick="applyPromoCode()" style="width:auto; padding:10px 12px; margin-top:0;" type="button">PAKAI</button><button class="pay-btn secondary" id="payPromoClearBtn" onclick="clearPromoCode()" style="width:auto; padding:10px 12px; margin-top:0; opacity:.85;" type="button">HAPUS</button></div><div class="pay-sub" id="payPromoHint" style="margin-top:6px;">Kode aktif s/d 25 April: KZR019, KZR004, KZR026, KZR07K, KZR23K</div></div><div class="pay-field" id="payZusmoUidField" style="display:none;"><label class="pay-label" for="payZusmoUidInput">UID :</label><input autocomplete="off" class="pay-input" id="payZusmoUidInput" inputmode="numeric" name="zusmo_uid" pattern="[0-9]*" placeholder="Masukkan UID" type="text"/></div><div class="pay-field" id="payWhatsappFieldDefault"><label class="pay-label" for="payWhatsappInput">Nomor WhatsApp :</label><input autocomplete="tel" class="pay-input" id="payWhatsappInput" inputmode="tel" name="buyer_whatsapp" placeholder="08" required="" type="tel"/></div><div id="payZusmoFields" style="display:none;"><div class="pay-field"><label class="pay-label">Pilih Game :</label><div class="pay-choice-grid two" id="payZusmoGameChoices"><button class="pay-choice-btn" data-group="game" data-value="Free Fire" type="button">FREE FIRE</button><button class="pay-choice-btn" data-group="game" data-value="FF Max" type="button">FF MAX</button></div><input id="payZusmoGameInput" name="zusmo_game" type="hidden" value=""/></div><div class="pay-field"><label class="pay-label">Pilih Device :</label><div class="pay-choice-grid two" id="payZusmoPlatformChoices"><button class="pay-choice-btn" data-group="platform" data-value="Android" type="button">ANDROID</button><button class="pay-choice-btn" data-group="platform" data-value="iOS" type="button">IOS</button></div><input id="payZusmoPlatformInput" name="zusmo_platform" type="hidden" value=""/></div></div><input accept="image/*,.pdf,application/pdf" class="kz-file-input-native" id="payFileInput" type="file"/><input id="payFormProofInfo" name="proof_info" type="hidden" value=""/></form><button class="pay-btn secondary" id="payBtnUpload" onclick="triggerPayUpload()" type="button">UPLOAD BUKTI</button><div class="pay-preview" id="payPreview"><img alt="Preview" id="payPreviewImg"/><div><div id="payPreviewName" style="font-weight:900">-</div><div class="pay-sub">Jika sudah benar, klik tombol kirim.</div></div></div><button class="pay-btn" id="payBtnSend" onclick="sendPaymentProof()" type="button">KONFIRMASI &amp; KIRIM</button><div class="pay-status" id="payStatus"></div></div><div class="pay-info">Pastikan seluruh data diisi dengan benar dan nomor WhatsApp dalam keadaan aktif.
 
 </div></div><div data-state="success" id="paySuccessView" style="display:none;"><div class="pay-success-wrap"><div class="pay-success-card"><div aria-hidden="true" class="pay-success-check"><svg aria-label="Sukses" role="img" viewbox="0 0 100 100"><circle class="ring" cx="50" cy="50" r="45"></circle><path class="tick" d="M30 52 L45 67 L72 38"></path></svg></div><div class="pay-success-title" id="paySuccessTitle">Bukti Pembayaran Terkirim</div><div class="pay-success-sub" id="paySuccessSub">Harap menunggu. Sedang diproses...</div><div class="rc-prod pay-success-prod"><img alt="Produk" id="paySuccessProductImg"/><div><div class="rc-prod-name" id="paySuccessProductName2">-</div></div></div><div class="pay-success-meta"><div class="pay-srow"><span>Order ID</span><b id="paySuccessOrderId">-</b></div><div class="pay-srow"><span>Waktu Order</span><b id="paySuccessOrderTime">-</b></div><div class="pay-srow"><span>Username</span><b id="paySuccessSenderName">-</b></div><div class="pay-srow"><span>WhatsApp</span><b id="paySuccessBuyerWA">-</b></div><div class="pay-srow"><span>Produk</span><b id="paySuccessProduct">-</b></div><div class="pay-srow"><span>Total Bayar</span><b id="paySuccessTotal">-</b></div><div class="pay-srow"><span>Metode</span><b id="paySuccessMethod">-</b></div><div class="pay-srow"><span>Tujuan</span><b id="paySuccessTarget">-</b></div></div><div class="pay-success-steps" id="paySuccessSteps"><div class="pay-step done"><i class="fas fa-check"></i> Bukti pembayaran berhasil dikirim</div><div class="pay-step"><i class="fas fa-clock"></i> Menunggu verifikasi admin</div><div class="pay-step"><i class="fab fa-whatsapp"></i> Proses kirim data akun ke WhatsApp</div></div><div class="pay-success-actions" id="paySuccessActions"><button class="pay-btn secondary" id="payBtnStruk" onclick="kzOpenReceiptFromSuccess()" type="button">STRUK</button><button class="pay-btn" id="payBtnFinish" onclick="kzTryFinishPayment()" type="button">SELESAI</button></div><div class="pay-success-note">
@@ -189,22 +191,22 @@ Mohon menunggu dengan sabar. Terima kasih.
 </div>
 <footer id="kzMainFooter"><div class="kz-footer-socials"><a aria-label="Instagram" class="kz-footer-social-btn" href="https://instagram.com/kzrizusmostore" rel="noopener" target="_blank" title="Instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a><a aria-label="TikTok" class="kz-footer-social-btn" href="https://www.tiktok.com/@kzrizusmo_store" rel="noopener" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i><span>TikTok</span></a><a aria-label="WhatsApp" class="kz-footer-social-btn" href="https://whatsapp.com/channel/0029VbDOVUJIHphDqJoiNH1L" rel="noopener" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a><a aria-label="Testimoni" class="kz-footer-social-btn" href="https://t.me/testikzrizusmostore" rel="noopener" target="_blank" title="Testimoni"><i class="fas fa-paper-plane"></i><span>Testimoni</span></a></div><p style="margin:18px 0 0; font-size:0.8rem; color:var(--text-sec);">© 2025 kzrizusmostore</p></footer>
 <footer id="kzMiniFooter"><div class="kz-footer-socials"><a aria-label="Instagram" class="kz-footer-social-btn" href="https://instagram.com/kzrizusmostore" rel="noopener" target="_blank" title="Instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a><a aria-label="TikTok" class="kz-footer-social-btn" href="https://www.tiktok.com/@kzrizusmo_store" rel="noopener" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i><span>TikTok</span></a><a aria-label="WhatsApp" class="kz-footer-social-btn" href="https://whatsapp.com/channel/0029VbDOVUJIHphDqJoiNH1L" rel="noopener" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a><a aria-label="Testimoni" class="kz-footer-social-btn" href="https://t.me/testikzrizusmostore" rel="noopener" target="_blank" title="Testimoni"><i class="fas fa-paper-plane"></i><span>Testimoni</span></a></div><p style="margin:16px 0 0; font-size:0.8rem; color:var(--text-sec);">© 2025 kzrizusmostore</p></footer><div class="modal-page" id="detailModal"><div class="modal-header"><div class="back-icon" onclick="closeModal()"><i class="fas fa-arrow-left"></i></div><h2 id="modalTitle" style="font-size: 1.1rem;">Detail Produk</h2></div><div class="modal-content" id="modalBody"></div></div>
-<script>window.__runBundlePart&&window.__runBundlePart(6);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(7);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(8);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(9);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(10);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(11);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(12);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(13);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(14);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(15);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(16);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(17);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(18);</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="kz-cs-float" id="kzCsFloat" style="display:none">
 <button aria-label="Customer Service" class="kz-cs-sticker" id="kzCsSticker" type="button">
 <img alt="CS" id="kzCsAvatarImg" loading="eager" onerror="this.style.display='none';var f=document.getElementById('kzCsFallbackSvg'); if(f) f.style.display='block';" referrerpolicy="no-referrer" src="https://files.catbox.moe/xtib4y.png"/>
@@ -246,59 +248,59 @@ Mohon menunggu dengan sabar. Terima kasih.
 </div>
 </div>
 </div>
-<script>window.__runBundlePart&&window.__runBundlePart(19);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(20);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(21);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(22);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(23);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(24);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(25);</script>
-
-
-<script>window.__runBundlePart&&window.__runBundlePart(26);</script>
-
-
-<script>window.__runBundlePart&&window.__runBundlePart(27);</script>
-
-
-<script>window.__runBundlePart&&window.__runBundlePart(28);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(29);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(30);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(31);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(32);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(33);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(34);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(35);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(36);</script>
-
-
-
-<script>window.__runBundlePart&&window.__runBundlePart(37);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(38);</script>
-
-
-
-<script>window.__runBundlePart&&window.__runBundlePart(39);</script>
 
 
 
 
-<script>window.__runBundlePart&&window.__runBundlePart(40);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(41);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(42);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(43);</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div aria-hidden="true" id="kzTestiOverlay">
 <div aria-labelledby="kzTestiOverlayTitle" aria-modal="true" class="kz-testi-panel" role="dialog">
@@ -349,74 +351,74 @@ Mohon menunggu dengan sabar. Terima kasih.
 </div>
 </div>
 </div>
-<script>window.__runBundlePart&&window.__runBundlePart(44);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(45);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(46);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(47);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(48);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(49);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(50);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(51);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(52);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(53);</script>
 
 
 
-<script>window.__runBundlePart&&window.__runBundlePart(54);</script>
 
 
-<script>window.__runBundlePart&&window.__runBundlePart(55);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(56);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(57);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(58);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(59);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(60);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(61);</script>
 
 
-<script>window.__runBundlePart&&window.__runBundlePart(62);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(63);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(64);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(65);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(66);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(67);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(68);</script>
 
 
-<script>window.__runBundlePart&&window.__runBundlePart(69);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(70);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(71);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(72);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(73);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(74);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(75);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(76);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(77);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(78);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(79);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(80);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(81);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(82);</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="apkInfoPopup" onclick="if(event.target===this) kzHideApkInfoPopup()">
 <div class="apk-popup-card">
 <button class="apk-popup-close" onclick="kzHideApkInfoPopup()" type="button">×</button>
@@ -484,136 +486,128 @@ Mohon menunggu dengan sabar. Terima kasih.
 </div>
 </div>
 
-<script>window.__runBundlePart&&window.__runBundlePart(83);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(84);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(85);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(86);</script>
-
-
-<script>window.__runBundlePart&&window.__runBundlePart(87);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(88);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(89);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(90);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(91);</script>
-
-<script>window.__runBundlePart&&window.__runBundlePart(92);</script>
-
-
-<script>window.__runBundlePart&&window.__runBundlePart(93);</script>
 
 
 
 
 
-<script>window.__runBundlePart&&window.__runBundlePart(94);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(95);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(96);</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- KZ EWALLET MAXIM FINAL PATCH -->
-<script>window.__runBundlePart&&window.__runBundlePart(97);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(98);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(99);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(100);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(101);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(102);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(103);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(104);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(105);</script>
+
+
+
+
+
+
+
+
+
+
+<script src="./app.js"></script>
 </body></html>
-<script>window.__runBundlePart&&window.__runBundlePart(106);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(107);</script>
 
-<script>window.__runBundlePart&&window.__runBundlePart(108);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(109);</script>
-<script>window.__runBundlePart&&window.__runBundlePart(110);</script>
+
+
+
+
 
 
 <div id="kzZusmoBetaUidPopup" onclick="if(event.target===this)kzHideZusmoBetaUidPopup()">
-  <div aria-label="Popup UID Zusmo Beta" aria-modal="true" class="kz-zusmo-beta-card" onclick="event.stopPropagation()" role="dialog">
-    <button aria-label="Tutup popup UID" class="kz-zusmo-beta-close" onclick="kzHideZusmoBetaUidPopup()" type="button">×</button>
-    <div class="kz-zusmo-beta-head">
-      <img alt="Zusmo Beta" class="kz-zusmo-beta-logo" id="kzZusmoBetaLogo" src="https://files.catbox.moe/7o8svo.png" onerror="this.onerror=null;this.src='https://files.catbox.moe/7o8svo.png';"/>
-      <div style="text-align:center">
-
-      </div>
-      <div class="kz-zusmo-beta-title">Zusmo Beta</div>
-
-    </div>
-    <div class="kz-zusmo-beta-body">
-      <div class="kz-zusmo-beta-tabs">
-        <button class="kz-zusmo-beta-tab active" data-mode="verify" id="kzZusmoBetaTabVerify" type="button">Verifikasi Server</button>        
-      </div>
-
-      <div class="kz-zusmo-beta-step show" id="kzZusmoBetaStepForm">
-        <div class="kz-zusmo-beta-packages">
-          <button class="kz-zusmo-beta-package active" data-tier="vip" type="button">
-            <strong>VIP
-            Only Server</strong>
-            <span>Rp 5.000</span>
-          </button>
-          <button class="kz-zusmo-beta-package" data-tier="vvip" type="button">
-            <strong>VVIP (Server-Damage-All Custom) </strong>
-            <span>Rp 10.000</span>
-          </button>
-        </div>
-        <div class="kz-zusmo-beta-field">
-          <input autocomplete="off" class="kz-zusmo-beta-input" id="kzZusmoBetaUidInput" inputmode="numeric" maxlength="12" pattern="[0-9]*" placeholder="Masukkan UID" type="text"/>
-        </div>
-        <button class="kz-zusmo-beta-primary" id="kzZusmoBetaContinueBtn" type="button">Verifikasi</button>
-        <button class="kz-zusmo-beta-secondary" id="kzZusmoBetaResetBtn" type="button">Reset</button>
-      </div>
-
-      <div class="kz-zusmo-beta-step" id="kzZusmoBetaStepLoading">
-        <div class="kz-zusmo-beta-loading">
-          <div class="kz-zusmo-beta-spinner"></div>
-          <div class="kz-zusmo-beta-loading-title" id="kzZusmoBetaLoadingTitle">Memverifikasi UID...</div>
-          <div class="kz-zusmo-beta-loading-sub">Mohon tunggu sebentar, sistem sedang mengecek data UID pemain Anda.</div>
-        </div>
-      </div>
-
-      <div class="kz-zusmo-beta-step" id="kzZusmoBetaStepPayment">
-        <div class="kz-zusmo-beta-verified" id="kzZusmoBetaVerifiedBox">
-          <i class="fas fa-circle-check"></i>
-          <div>
-            <div style="font-weight:1000" id="kzZusmoBetaVerifiedTitle">Verifikasi berhasil</div>
-            <div style="font-size:12px;color:rgba(255,255,255,.74)" id="kzZusmoBetaVerifiedSub">Silakan lanjutkan pembayaran sesuai paket yang dipilih.</div>
-          </div>
-        </div>
-
-        <div class="kz-zusmo-beta-summary">
-          <div class="kz-zusmo-beta-row"><span>Mode</span><b id="kzZusmoBetaModeText">Verifikasi UID</b></div>
-          <div class="kz-zusmo-beta-row"><span>UID</span><b id="kzZusmoBetaUidText">-</b></div>
-          <div class="kz-zusmo-beta-row"><span>Paket</span><b id="kzZusmoBetaTierText">VIP</b></div>
-          <div class="kz-zusmo-beta-row"><span>Total Bayar</span><b id="kzZusmoBetaPriceText">Rp 5.000</b></div>
-        </div>
-
-        <img alt="QRIS Pembayaran" class="kz-zusmo-beta-qris" id="kzZusmoBetaQrisImg" src="https://files.catbox.moe/ehzvij.jpg"/>
-
-        <div class="kz-zusmo-beta-upload">
-          <button class="kz-zusmo-beta-proof-btn" id="kzZusmoBetaProofBtn" type="button">Upload Bukti Transfer</button>
-          <input accept="image/*,.pdf,application/pdf" class="kz-zusmo-beta-proof-input" id="kzZusmoBetaProofInput" type="file"/>
-          <div class="kz-zusmo-beta-proof-preview" id="kzZusmoBetaProofPreview">
-            <img alt="Preview bukti transfer" id="kzZusmoBetaProofImg" src=""/>
-            <div class="kz-zusmo-beta-proof-meta">
-              <div class="kz-zusmo-beta-proof-name" id="kzZusmoBetaProofName">-</div>
-              <div class="kz-zusmo-beta-proof-sub">Preview bukti transfer Anda.</div>
-            </div>
-          </div>
-          <div class="kz-zusmo-beta-actions">
-            <button class="kz-zusmo-beta-primary" id="kzZusmoBetaConfirmBtn" type="button">Konfirmasi Bukti</button>
-          </div>
-          <div class="kz-zusmo-beta-status" id="kzZusmoBetaStatus">Bukti transfer berhasil dimuat. Silakan simpan status ini untuk pengecekan manual.</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div aria-label="Popup UID Zusmo Beta" aria-modal="true" class="kz-zusmo-beta-card" onclick="event.stopPropagation()" role="dialog">
+<button aria-label="Tutup popup UID" class="kz-zusmo-beta-close" onclick="kzHideZusmoBetaUidPopup()" type="button">×</button>
+<div class="kz-zusmo-beta-head">
+<img alt="Zusmo Beta" class="kz-zusmo-beta-logo" id="kzZusmoBetaLogo" onerror="this.onerror=null;this.src='https://files.catbox.moe/7o8svo.png';" src="https://files.catbox.moe/7o8svo.png"/>
+<div style="text-align:center">
 </div>
-<script>window.__runBundlePart&&window.__runBundlePart(111);</script>
+<div class="kz-zusmo-beta-title">Zusmo Beta</div>
+</div>
+<div class="kz-zusmo-beta-body">
+<div class="kz-zusmo-beta-tabs">
+<button class="kz-zusmo-beta-tab active" data-mode="verify" id="kzZusmoBetaTabVerify" type="button">Verifikasi Server</button>
+</div>
+<div class="kz-zusmo-beta-step show" id="kzZusmoBetaStepForm">
+<div class="kz-zusmo-beta-packages">
+<button class="kz-zusmo-beta-package active" data-tier="vip" type="button">
+<strong>VIP
+            Only Server</strong>
+<span>Rp 5.000</span>
+</button>
+<button class="kz-zusmo-beta-package" data-tier="vvip" type="button">
+<strong>VVIP (Server-Damage-All Custom) </strong>
+<span>Rp 10.000</span>
+</button>
+</div>
+<div class="kz-zusmo-beta-field">
+<input autocomplete="off" class="kz-zusmo-beta-input" id="kzZusmoBetaUidInput" inputmode="numeric" maxlength="12" pattern="[0-9]*" placeholder="Masukkan UID" type="text"/>
+</div>
+<button class="kz-zusmo-beta-primary" id="kzZusmoBetaContinueBtn" type="button">Verifikasi</button>
+<button class="kz-zusmo-beta-secondary" id="kzZusmoBetaResetBtn" type="button">Reset</button>
+</div>
+<div class="kz-zusmo-beta-step" id="kzZusmoBetaStepLoading">
+<div class="kz-zusmo-beta-loading">
+<div class="kz-zusmo-beta-spinner"></div>
+<div class="kz-zusmo-beta-loading-title" id="kzZusmoBetaLoadingTitle">Memverifikasi UID...</div>
+<div class="kz-zusmo-beta-loading-sub">Mohon tunggu sebentar, sistem sedang mengecek data UID pemain Anda.</div>
+</div>
+</div>
+<div class="kz-zusmo-beta-step" id="kzZusmoBetaStepPayment">
+<div class="kz-zusmo-beta-verified" id="kzZusmoBetaVerifiedBox">
+<i class="fas fa-circle-check"></i>
+<div>
+<div id="kzZusmoBetaVerifiedTitle" style="font-weight:1000">Verifikasi berhasil</div>
+<div id="kzZusmoBetaVerifiedSub" style="font-size:12px;color:rgba(255,255,255,.74)">Silakan lanjutkan pembayaran sesuai paket yang dipilih.</div>
+</div>
+</div>
+<div class="kz-zusmo-beta-summary">
+<div class="kz-zusmo-beta-row"><span>Mode</span><b id="kzZusmoBetaModeText">Verifikasi UID</b></div>
+<div class="kz-zusmo-beta-row"><span>UID</span><b id="kzZusmoBetaUidText">-</b></div>
+<div class="kz-zusmo-beta-row"><span>Paket</span><b id="kzZusmoBetaTierText">VIP</b></div>
+<div class="kz-zusmo-beta-row"><span>Total Bayar</span><b id="kzZusmoBetaPriceText">Rp 5.000</b></div>
+</div>
+<img alt="QRIS Pembayaran" class="kz-zusmo-beta-qris" id="kzZusmoBetaQrisImg" src="https://files.catbox.moe/ehzvij.jpg"/>
+<div class="kz-zusmo-beta-upload">
+<button class="kz-zusmo-beta-proof-btn" id="kzZusmoBetaProofBtn" type="button">Upload Bukti Transfer</button>
+<input accept="image/*,.pdf,application/pdf" class="kz-zusmo-beta-proof-input" id="kzZusmoBetaProofInput" type="file"/>
+<div class="kz-zusmo-beta-proof-preview" id="kzZusmoBetaProofPreview">
+<img alt="Preview bukti transfer" id="kzZusmoBetaProofImg" src=""/>
+<div class="kz-zusmo-beta-proof-meta">
+<div class="kz-zusmo-beta-proof-name" id="kzZusmoBetaProofName">-</div>
+<div class="kz-zusmo-beta-proof-sub">Preview bukti transfer Anda.</div>
+</div>
+</div>
+<div class="kz-zusmo-beta-actions">
+<button class="kz-zusmo-beta-primary" id="kzZusmoBetaConfirmBtn" type="button">Konfirmasi Bukti</button>
+</div>
+<div class="kz-zusmo-beta-status" id="kzZusmoBetaStatus">Bukti transfer berhasil dimuat. Silakan simpan status ini untuk pengecekan manual.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 <div id="kzZusmoTutorialOverlay" onclick="if(event.target===this)kzHideZusmoTutorialOverlay()">
@@ -634,4 +628,4 @@ Mohon menunggu dengan sabar. Terima kasih.
 </div>
 </div>
 </div>
-<script>window.__runBundlePart&&window.__runBundlePart(112);</script>
+
