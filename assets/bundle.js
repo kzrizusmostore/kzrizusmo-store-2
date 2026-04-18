@@ -10,7 +10,12 @@
     done[n] = true;
     if (!parts[n]) return;
     try {
-      (0, eval)(parts[n]);
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.text = parts[n] + "
+//# sourceURL=bundle-part-" + n + ".js";
+      (document.head || document.documentElement).appendChild(s);
+      s.parentNode && s.parentNode.removeChild(s);
     } catch (err) {
       console.error('bundle.js part failed', n, meta[n] && meta[n].id, err);
       throw err;
